@@ -8,7 +8,7 @@ export default class Bishop extends Piece {
         super(player);
     }
 
-    public getAvailableMoves(board: Board){
+    public getAvailableMoves(board: Board) {
         let row = board.findPiece(this).row
         let col = board.findPiece(this).col
         let moves = [];
@@ -16,14 +16,14 @@ export default class Bishop extends Piece {
         for (let i = -7; i <= 7; i++) {
             let newRow = row + i;
             let newCol = col + i;
-            if (newRow >= 0  && newRow <= 7 && newCol >= 0 && newCol <= 7 && i != 0 )
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7 && i != 0)
                 moves.push(Square.at(newRow, newCol));
         }
 
         for (let i = -7; i <= 7; i++) {
             let newRow = row + i;
             let newCol = col - i;
-            if (newRow >= 0  && newRow <= 7 && newCol >= 0 && newCol <= 7 && i != 0 )
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7 && i != 0)
                 moves.push(Square.at(newRow, newCol));
         }
 
